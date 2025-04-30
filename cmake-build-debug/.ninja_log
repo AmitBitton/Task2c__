@@ -1,0 +1,9 @@
+# ninja log v6
+1	319	1745477066063109525	CMakeFiles/Task2c__.dir/SquareMat.cpp.o	b6b61fd774e73fd0
+319	520	1745477066382639290	Task2c__	ec3f12a0e6240bfc
+1	57	1745498804993145194	build.ninja	6a51475d02c167a
+2	267	1745477066063109525	CMakeFiles/Task2c__.dir/main.cpp.o	802ade866f8cd2e1
+1	507	1745499769747692923	CMakeFiles/Task2c__.dir/SquareMat.cpp.o	b6b61fd774e73fd0
+1	508	1745499769747692923	CMakeFiles/Task2c__.dir/main.cpp.o	802ade866f8cd2e1
+1	3010	1745499769747692923	CMakeFiles/Task2c__.dir/Test.cpp.o	ccf42e13ff5d33d9
+1	1829	1745508299467040544	CMakeFiles/Task2c__.dir/Test.cpp.o	ccf42e13ff5d33d9

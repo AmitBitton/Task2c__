@@ -1,0 +1,3 @@
+/home/amit/Task2c++/cmake-build-debug/CMakeFiles/Task2c__.dir
+/home/amit/Task2c++/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/amit/Task2c++/cmake-build-debug/CMakeFiles/rebuild_cache.dir
