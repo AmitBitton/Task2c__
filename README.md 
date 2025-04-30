@@ -1,30 +1,32 @@
 # Assignment 2 – Implementing Operator Overloads for Square Matrices
 
+
 ## Overview
 This project implements operator overloading for square matrices using a custom `SquareMat` class in C++.
 It includes arithmetic, comparison, and matrix specific operators (like transpose and determinant).
 The project including unit tests using the `doctest` framework, and check memory leak using Valgrind.
 As part of this assignment, the Rule of Three implemented, including a custom copy constructor, assignment operator, and destructor to ensure proper memory management and avoid shallow copies.
 
+
 ## Project Structure
 
 - **`SquareMat.h / SquareMat.cpp`**:
-  The main class implementing all matrix functionality and operators.
-  Implements an n x n matrix using a dynamically allocated 2D array (`double** data`).
-  Enables safe access to matrix elements using `mat[i][j]` syntax through a nested `RowProxy` class.
+The main class implementing all matrix functionality and operators.
+Implements an n x n matrix using a dynamically allocated 2D array (double** data).
+Enables safe access to matrix elements using `mat[i][j]` syntax through a nested `RowProxy` class.
 
 - **`RowProxy (Inner Class)`**:
-  Enables safe access to matrix elements using double indexing syntax (`mat[i][j]`), with bounds checking for both row and column indices.
-  Supports both const and non-const access via overloaded `operator[]`, and throws `std::invalid_argument` on invalid indices.
+Enables safe access to matrix elements using double indexing syntax (mat[i][j]), with bounds checking for both row and column indices.
+Supports both const and non-const access via overloaded operator[], and throws std::invalid_argument on invalid indices.
 
 - **`main.cpp`**:
-  Demonstrates usage of all overloaded operators.
+Demonstrates usage of all overloaded operators.
 
 - **`Test.cpp`**:
-  Unit tests written with doctest.
+Unit tests written with doctest.
 
 - **`Makefile`**:
-  Compilation, testing, valgrind and cleanup.
+Compilation, testing, valgrind and cleanup.
 
 ---
 
@@ -35,13 +37,13 @@ The `SquareMat` class supports the following operators:
 ### Arithmetic Operators
 - `+`, `-`
   Element-wise addition or subtraction between two matrices of the same size
-- `*`
-  Matrix multiplication and scalar multiplication
+ - `*`
+  matrix multiplication and scalar multiplication
 - `/`
   Scalar division: divides each element in the matrix by a scalar (non-zero)
-- `%`
-  - Modulo with scalar: `mat % scalar` applies modulo to each element
-  - Element-wise multiplication: `mat1 % mat2` multiplies corresponding elements (must be same size)
+  - `%`
+    - Modulo with scalar: `mat % scalar` applies modulo to each element
+    - Element-wise multiplication: `mat1 % mat2` multiplies corresponding elements (must be same size)
 - `^`
   Matrix exponentiation: raises the matrix to a positive power (repeated multiplication)
 
@@ -67,9 +69,10 @@ The `SquareMat` class supports the following operators:
 - `+=`, `-=`, `*=`, `/=`, `%=`
   Performs the operation and updates the matrix in place
 
+
 ### Element Access
 - `mat[i][j]`
-  Access elements with bounds checking (throws exceptions)
+ access elements with bounds checking (throw exceptions)
 
 ### Output Stream
 - `<<`
@@ -78,8 +81,7 @@ The `SquareMat` class supports the following operators:
 ---
 
 ## Testing
-
-Unit tests using [doctest](https://github.com/doctest/doctest).
+Unit tests using  [doctest](https://github.com/doctest/doctest).
 
 Tests include:
 - Constructor validation (valid and invalid sizes)
@@ -92,9 +94,37 @@ Tests include:
 
 ## Running the Project
 
-> Make sure `clang++-18`, `make`, and `valgrind` are installed
+>  Make sure `clang++-18`, `make`, and `valgrind` are installed
 
 ### Compile and Run the Main Demo
-```bash
+```
 make Main
+
 ./Main
+```
+---
+### Run the Unit Tests
+This compiles and runs all tests using the doctest framework
+```
+make test
+./test
+```
+---
+### Run Memory Check with Valgrind
+Check for memory leaks in both the demo and unit tests:
+```
+make valgrind
+```
+---
+### Clean Build Files
+Remove all compiled files (main, test, and .o files)
+```
+make clean
+```
+
+---
+
+# Author
++ Written by: Amit Bitton
++ Mail: amiteste.bitton@msmail.ariel.ac.il
++ Systems programming 2 , EX2, May 2025
