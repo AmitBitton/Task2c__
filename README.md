@@ -1,0 +1,130 @@
+# Assignment 2 – Implementing Operator Overloads for Square Matrices
+
+
+## Overview
+This project implements operator overloading for square matrices using a custom `SquareMat` class in C++.
+It includes arithmetic, comparison, and matrix specific operators (like transpose and determinant).
+The project including unit tests using the `doctest` framework, and check memory leak using Valgrind.
+As part of this assignment, the Rule of Three implemented, including a custom copy constructor, assignment operator, and destructor to ensure proper memory management and avoid shallow copies.
+
+
+## Project Structure
+
+- **`SquareMat.h / SquareMat.cpp`**:
+The main class implementing all matrix functionality and operators.
+Implements an n x n matrix using a dynamically allocated 2D array (double** data).
+Enables safe access to matrix elements using `mat[i][j]` syntax through a nested `RowProxy` class.
+
+- **`RowProxy (Inner Class)`**:
+Enables safe access to matrix elements using double indexing syntax (mat[i][j]), with bounds checking for both row and column indices.
+Supports both const and non-const access via overloaded operator[], and throws std::invalid_argument on invalid indices.
+
+- **`main.cpp`**:
+Demonstrates usage of all overloaded operators.
+
+- **`Test.cpp`**:
+Unit tests written with doctest.
+
+- **`Makefile`**:
+Compilation, testing, valgrind and cleanup.
+
+---
+
+## Implemented Operators
+
+The `SquareMat` class supports the following operators:
+
+### Arithmetic Operators
+- `+`, `-`
+  Element-wise addition or subtraction between two matrices of the same size
+ - `*`
+  matrix multiplication and scalar multiplication
+- `/`
+  Scalar division: divides each element in the matrix by a scalar (non-zero)
+  - `%`
+    - Modulo with scalar: `mat % scalar` applies modulo to each element
+    - Element-wise multiplication: `mat1 % mat2` multiplies corresponding elements (must be same size)
+- `^`
+  Matrix exponentiation: raises the matrix to a positive power (repeated multiplication)
+
+### Unary Operators
+- `-`
+  Negates all matrix elements
+- `!`
+  Computes the determinant of the matrix
+- `~`
+  Transposes the matrix (swaps rows and columns)
+
+### Comparison Operators
+- `==`, `!=`
+  Matrices are considered equal if the sum of their elements is equal
+- `<`, `<=`, `>`, `>=`
+  Compares matrices based on the sum of their elements
+
+### Increment/Decrement
+- `++`, `--`
+  Increments or decrements each element by 1. Both pre and post versions are supported
+
+### Assignment Variants
+- `+=`, `-=`, `*=`, `/=`, `%=`
+  Performs the operation and updates the matrix in place
+
+
+### Element Access
+- `mat[i][j]`
+ access elements with bounds checking (throw exceptions)
+
+### Output Stream
+- `<<`
+  Overloaded output operator for printing the matrix in a readable format
+
+---
+
+## Testing
+Unit tests using  [doctest](https://github.com/doctest/doctest).
+
+Tests include:
+- Constructor validation (valid and invalid sizes)
+- Copy constructor and assignment (including self-assignment)
+- Edge cases: empty, out-of-bounds, modulo by zero
+- All operator overloads including expected exceptions
+- Transpose involution, determinant correctness
+
+---
+
+## Running the Project
+
+>  Make sure `clang++-18`, `make`, and `valgrind` are installed
+
+### Compile and Run the Main Demo
+```
+make Main
+
+./Main
+```
+---
+### Run the Unit Tests
+This compiles and runs all tests using the doctest framework
+```
+make test
+./test
+```
+---
+### Run Memory Check with Valgrind
+Check for memory leaks in both the demo and unit tests:
+```
+make valgrind
+```
+---
+### Clean Build Files
+Remove all compiled files (main, test, and .o files)
+```
+make clean
+```
+
+---
+
+# Author
++ Written by: Amit Bitton
++ Mail: amiteste.bitton@msmail.ariel.ac.il
++ Systems programming 2 , EX2, May 2025
