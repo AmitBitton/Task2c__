@@ -1,6 +1,5 @@
 # Assignment 2 – Implementing Operator Overloads for Square Matrices
 
----
 
 ## Overview
 This project implements operator overloading for square matrices using a custom `SquareMat` class in C++.
@@ -8,7 +7,6 @@ It includes arithmetic, comparison, and matrix specific operators (like transpos
 The project including unit tests using the `doctest` framework, and check memory leak using Valgrind.
 As part of this assignment, the Rule of Three implemented, including a custom copy constructor, assignment operator, and destructor to ensure proper memory management and avoid shallow copies.
 
----
 
 ## Project Structure
 
@@ -38,38 +36,38 @@ The `SquareMat` class supports the following operators:
 
 ### Arithmetic Operators
 - `+`, `-`
-  Element-wise addition or subtraction between two matrices of the same size.
+  Element-wise addition or subtraction between two matrices of the same size
  - `*`
   matrix multiplication and scalar multiplication
 - `/`
-  Scalar division: divides each element in the matrix by a scalar (non-zero).
+  Scalar division: divides each element in the matrix by a scalar (non-zero)
   - `%`
-    - Modulo with scalar: `mat % scalar` applies modulo to each element.
-    - Element-wise multiplication: `mat1 % mat2` multiplies corresponding elements (must be same size).
+    - Modulo with scalar: `mat % scalar` applies modulo to each element
+    - Element-wise multiplication: `mat1 % mat2` multiplies corresponding elements (must be same size)
 - `^`
-  Matrix exponentiation: raises the matrix to a positive power (repeated multiplication).
+  Matrix exponentiation: raises the matrix to a positive power (repeated multiplication)
 
 ### Unary Operators
 - `-`
   Negates all matrix elements
 - `!`
-  Computes the determinant of the matrix.
+  Computes the determinant of the matrix
 - `~`
-  Transposes the matrix (swaps rows and columns).
+  Transposes the matrix (swaps rows and columns)
 
 ### Comparison Operators
 - `==`, `!=`
-  Matrices are considered equal if the sum of their elements is equal.
+  Matrices are considered equal if the sum of their elements is equal
 - `<`, `<=`, `>`, `>=`
-  Compares matrices based on the sum of their elements.
+  Compares matrices based on the sum of their elements
 
 ### Increment/Decrement
 - `++`, `--`
-  Increments or decrements each element by 1. Both pre and post versions are supported.
+  Increments or decrements each element by 1. Both pre and post versions are supported
 
 ### Assignment Variants
 - `+=`, `-=`, `*=`, `/=`, `%=`
-  Performs the operation and updates the matrix in place.
+  Performs the operation and updates the matrix in place
 
 
 ### Element Access
@@ -78,7 +76,7 @@ The `SquareMat` class supports the following operators:
 
 ### Output Stream
 - `<<`
-  Overloaded output operator for printing the matrix in a readable format.
+  Overloaded output operator for printing the matrix in a readable format
 
 ---
 
