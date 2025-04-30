@@ -11,19 +11,25 @@ As part of this assignment, the Rule of Three implemented, including a custom co
 ---
 
 ## Project Structure
-```
-- SquareMat.h / SquareMat.cpp : The main class implementing all matrix functionality and operators.
+
+- **SquareMat.h / SquareMat.cpp** :
+The main class implementing all matrix functionality and operators.
 Implements an n x n matrix using a dynamically allocated 2D array (double** data).
 Enables safe access to matrix elements using `mat[i][j]` syntax through a nested `RowProxy` class.
 
-- RowProxy (Inner Class): Enables safe access to matrix elements using double indexing syntax (mat[i][j]), with bounds checking for both row and column indices.
+- **RowProxy (Inner Class)**:
+Enables safe access to matrix elements using double indexing syntax (mat[i][j]), with bounds checking for both row and column indices.
 Supports both const and non-const access via overloaded operator[], and throws std::invalid_argument on invalid indices.
-- main.cpp : Demonstrates usage of all overloaded operators.
-- Test.cpp : Unit tests written with doctest.
-- Makefile : Compilation, testing, valgrind and cleanup.
-- README.md : Documentation for the project (this file).
 
-```
+- **main.cpp**
+Demonstrates usage of all overloaded operators.
+
+- **Test.cpp**
+Unit tests written with doctest.
+
+- **Makefile** :
+Compilation, testing, valgrind and cleanup.
+
 ---
 
 ## Implemented Operators
