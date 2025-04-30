@@ -12,27 +12,28 @@ As part of this assignment, the Rule of Three implemented, including a custom co
 
 ## Project Structure
 
-- **SquareMat.h / SquareMat.cpp** :
+- **`SquareMat.h / SquareMat.cpp`**:
 The main class implementing all matrix functionality and operators.
 Implements an n x n matrix using a dynamically allocated 2D array (double** data).
 Enables safe access to matrix elements using `mat[i][j]` syntax through a nested `RowProxy` class.
 
-- **RowProxy (Inner Class)**:
+- **`RowProxy (Inner Class)`**:
 Enables safe access to matrix elements using double indexing syntax (mat[i][j]), with bounds checking for both row and column indices.
 Supports both const and non-const access via overloaded operator[], and throws std::invalid_argument on invalid indices.
 
-- **main.cpp**
+- **`main.cpp`**:
 Demonstrates usage of all overloaded operators.
 
-- **Test.cpp**
+- **`Test.cpp`**:
 Unit tests written with doctest.
 
-- **Makefile** :
+- **`Makefile`**:
 Compilation, testing, valgrind and cleanup.
 
 ---
 
 ## Implemented Operators
+
 The `SquareMat` class supports the following operators:
 
 ### Arithmetic Operators
@@ -75,7 +76,7 @@ The `SquareMat` class supports the following operators:
 - `mat[i][j]`
  access elements with bounds checking (throw exceptions)
 
-Output Stream
+### Output Stream
 - `<<`
   Overloaded output operator for printing the matrix in a readable format.
 
